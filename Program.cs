@@ -30,7 +30,7 @@ namespace Discord_Rpc
             }
 
             // == Create the client
-            var client = new DiscordRpcClient(ConfigParser.getConfig("client_id"));
+            var client = new DiscordRpcClient(ConfigParser.GetConfigValue("client_id"));
 
 
             // == Subscribe to some events
@@ -39,12 +39,6 @@ namespace Discord_Rpc
                 //Create some events so we know things are happening
                 Console.WriteLine("Connected to discord with user {0}", msg.User.Username);
 
-            };
-
-            client.OnPresenceUpdate += (sender, msg) =>
-            {
-                //The presence has updated
-                Console.WriteLine("Presence has been updated! ");
             };
 
             // == Initialize
@@ -68,11 +62,9 @@ namespace Discord_Rpc
                 }
             });
 
-            Console.WriteLine("Presence has been set and we are now waiting for updates!");
             while (true)
             {
                 Thread.Sleep(5000);
-                Console.WriteLine("Updating Presence");
                 LogActiveAppDetails(client);
             }
 
@@ -91,7 +83,6 @@ namespace Discord_Rpc
             string[] detailsArray = App.AppManager.getAppDetailsArray(app); // This is an array of the app details (e.g. "Writing Code")
             string fullAppName = detailsArray[3]; // This is the full app name (e.g. "Visual Studio Code")
 
-            Console.WriteLine("Active App: " + app);
 
             // check if the app name has changed before calling updatePresence
             if (app != prevApp)
