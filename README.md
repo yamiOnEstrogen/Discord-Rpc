@@ -1,4 +1,4 @@
-# Discord Rich Presence README
+# Discord Rich Presence
 [![GitHub stars](https://img.shields.io/github/stars/0xhylia/Discord-Rpc.svg)](https://github.com/0xhylia/Discord-Rpc/stargazers)
 [![GitHub license](https://img.shields.io/github/license/0xhylia/Discord-Rpc.svg)](https://github.com/0xhylia/Discord-Rpc/blob/master/LICENSE)
 
