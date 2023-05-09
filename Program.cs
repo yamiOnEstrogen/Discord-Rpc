@@ -11,6 +11,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Discord_Rpc.App;
 using Discord_Rpc.Parsers;
+using Discord_Rpc.Version;
 
 namespace Discord_Rpc
 {
@@ -18,6 +19,16 @@ namespace Discord_Rpc
     {
         private static void Main(string[] args)
         {
+            // == Check if the user is running the latest version
+            if (!VerionManager.isLatestVersion())
+            {
+                Console.WriteLine("You are not running the latest version of Discord RPC!");
+                Console.WriteLine($"Please update to the latest version at https://github.com/0xhylia/Discord-Rpc/releases/tag/{VerionManager.getLatestVersion()}");
+                Console.WriteLine("Press any key to exit...");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
+
             // == Create the client
             var client = new DiscordRpcClient(ConfigParser.getConfig("client_id"));
 
