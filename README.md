@@ -9,7 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 To run this application you need the following:
-- .NET 5 SDK
+- .NET 6 SDK
 - A Discord Developer Account
 
 ### Installing
